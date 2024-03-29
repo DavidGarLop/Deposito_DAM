@@ -1,17 +1,29 @@
 package cuentas;
-
+/**
+ * Clase que representa una cuenta bancaria
+ */
 public class CCuenta {
 
 
-    private String nombre;
-    private String cuenta;
-    private double saldo;
-    private double tipoInterés;
+    private String nombre;// Nombre del titular
+    private String cuenta;// Numero de cuenta
+    private double saldo;// Saldo de la cuenta
+    private double tipoInterés;// Tipo de interes 
 
+    /**
+     * Constructor de la clase cuenta
+     */
     public CCuenta()
     {
     }
 
+    /**
+     * Constructor con parametros 
+     * @param nom
+     * @param cue
+     * @param sal
+     * @param tipo
+     */
     public CCuenta(String nom, String cue, double sal, double tipo)
     {
         nombre =nom;
@@ -52,13 +64,21 @@ public class CCuenta {
     public void setTipoInterés(double tipo) {
         tipoInterés = tipo;
     }
-
-
+    
+    /**
+     * Devuelve el saldo de la cuenta
+     * @return
+     */
     public double estado()
     {
         return saldo;
     }
 
+    /**
+     * Ingresa dinero en la cuenta
+     * @param cantidad
+     * @throws Exception
+     */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
@@ -66,6 +86,11 @@ public class CCuenta {
         saldo = saldo + cantidad;
     }
 
+    /**
+     * Retira dinero de la cuenta
+     * @param cantidad
+     * @throws Exception
+     */
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
